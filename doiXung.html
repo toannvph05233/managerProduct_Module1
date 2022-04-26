@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let str = "abcdddcba"
+
+    function isCheck(str) {
+        for (let i = 0; i < str.length/2; i++) {
+            if (str[i] !== str[str.length - 1 - i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    alert(isCheck(str));
+</script>

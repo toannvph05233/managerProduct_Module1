@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--    <link rel="stylesheet" href="fontawesome/css/all.min.css">-->
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <style>
+        h1 {
+            color: red;
+        }
+
+        tr:nth-child(odd) {
+            background: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<!-- Page Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <!--            <i class="fas fa-film mr-2"></i>-->
+            John Toàn
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1" aria-current="page" onclick="showHome()">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-link-3" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-4" onclick="showManager()">Manager</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll"
+     data-image-src="img/hero.jpg">
+    <!--    <form class="d-flex tm-search-form">-->
+    <!--        <input class="form-control tm-search-input" type="search" placeholder="Search" aria-label="Search">-->
+    <!--        <button class="btn btn-outline-success tm-search-btn" type="submit">-->
+    <!--            <i class="fas fa-search"></i>-->
+    <!--        </button>-->
+    <!--    </form>-->
+</div>
+
+<div class="container-fluid tm-container-content tm-mt-60">
+    <div class="row mb-4">
+        <h2 class="col-6 tm-text-primary">
+            List Product
+        </h2>
+    </div>
+
+    <div class="row tm-mb-90 tm-gallery" id="displayHome">
+    </div>
+</div>
+
+
+<div align="center" id="manager">
+    Name: <input placeholder="name Product" name="abc" id="nameP">
+
+    Image:<input placeholder="image" id="img">
+
+    Price:<input placeholder="Price" id="price">
+
+    <button onclick="create()">Add Product</button>
+    <button onclick="saveEdit()">Edit Product</button>
+    <br>
+    <br>
+    <table id="displayManager" style="width: 70%; text-align: center">
+
+    </table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+    <div class="container-fluid tm-container-small">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
+                <h3 class="tm-text-primary mb-4 tm-footer-title">About Catalog-Z</h3>
+                <p>Catalog-Z is free</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
+                <h3 class="tm-text-primary mb-4 tm-footer-title">Our Links</h3>
+                <ul class="tm-footer-links pl-0">
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Our Company</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
+                <a href="#" class="tm-text-gray text-right d-block mb-2">Terms of Use</a>
+                <a href="#" class="tm-text-gray text-right d-block">Privacy Policy</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script src="js/plugins.js"></script>
+<script src="js/managerProduct.js"></script>
+
+<script>
+    $(window).on("load", function () {
+        $('body').addClass('loaded');
+    });
+    showHome();
+</script>
+</body>
+</html>
+
