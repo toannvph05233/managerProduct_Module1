@@ -10,20 +10,14 @@ class Product {
     }
 }
 
-
-let products = [
-    new Product("BMW", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2022-bmw-alpina-b8-gran-coupe-4-1646929819.jpg?crop=0.670xw:0.670xh;0.162xw,0.162xh&resize=640:*", 50000),
-    new Product("KIA", "https://cdnimg.vietnamplus.vn/t1200/Uploaded/qrndqxjwp/2021_10_12/k3-a13d.jpg", 2000),
-    new Product("Honda", "https://autopress.vn/uploads/userfiles/images/news_1548330456/honda-crv.jpg", 2000),
-    new Product("Poster", "https://photo-cms-kienthuc.zadn.vn/zoom/800/uploaded/nguyendoa/2014_07_31/cac-thuat-ngu-ve-o-to-tai-xe-nen-biet-hinh-3.jpg", 2000)
-]
-
+let products = JSON.parse(localStorage.getItem("products"));
 
 function create() {
     let name = document.getElementById('nameP').value;
     let img = document.getElementById('img').value;
     let price = document.getElementById('price').value;
     products.push(new Product(name, img, price));
+    localStorage.setItem("products",JSON.stringify(products));
     showManager();
 }
 
@@ -82,13 +76,15 @@ function saveEdit() {
     let name = document.getElementById('nameP').value;
     let img = document.getElementById('img').value;
     let price = document.getElementById('price').value;
-
     products[indexEdit] = new Product(name, img, price);
+
+    localStorage.setItem("products",JSON.stringify(products));
     showManager();
     indexEdit = -1;
 }
 
 function deleteP(index) {
     products.splice(index, 1);
+    localStorage.setItem("products",JSON.stringify(products));
     showManager();
 }
